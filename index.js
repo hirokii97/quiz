@@ -71,6 +71,16 @@ for (let i = 0; i < quizLength; i++) {
     answersBox.appendChild(answers);
 
     const correctBox = document.createElement("div");
+
+    answers.addEventListener("click", (e) => {
+      judge(e,i,correctBox);
+      const allAnswers = document.getElementsByClassName(answers.className)
+
+      for (let index = 0; index < allAnswers.length; index++) {
+        allAnswers[index].disabled ='true'
+      }
+      quizBox.appendChild(correctBox)
+
     });
   }
 };
