@@ -1,6 +1,4 @@
 "use strict";
-//参考サイト
-//https://www.giv.co.jp/member_tweet/2156/
 
 const quiz = [
   {
@@ -17,7 +15,6 @@ const quiz = [
   },
 ];
 
-let quizCount = 0;
 //正解・不正解の判定、表示
 const judge = (e, i,correctBox) => {
   const correct = quiz[i].correct
@@ -33,22 +30,13 @@ const judge = (e, i,correctBox) => {
 //quizの数だけ表示する
 const quizLength = quiz.length;
 
-const $button = document.querySelectorAll(".answer");
-const buttonLength = $button.length;
 const quizWrapper = document.getElementById("question-wrapper");
 
-const setQuestion = () => {
-  let buttonCount = 0;
-  document.getElementById("js-number").textContent = quiz[quizCount].questionNumber;
-  document.getElementById("js-question").textContent = quiz[quizCount].question;
 //問題の表示
 for (let i = 0; i < quizLength; i++) {
   const quizBox = document.createElement("div");
   quizBox.className = `quiz_${i}`
 
-  while (buttonCount < buttonLength) {
-    $button[buttonCount].textContent = quiz[quizCount].answers[buttonCount];
-    buttonCount++;
   //クイズ番号
   const question_number = document.createElement("h2");
   question_number.className = `question_number_${i + 1}`;
@@ -83,29 +71,7 @@ for (let i = 0; i < quizLength; i++) {
 
     });
   }
-};
-setQuestion();
 
-let clickedCount = 0;
-let score = 0;
-while (clickedCount < buttonLength) {
-  $button[clickedCount].addEventListener("click", (e) => {
-    const answerResult = document.querySelector('.answer_result')
-    const answerResultText = document.querySelector(".answer_result_text");
-    const clickedAnswer = e.currentTarget;
-    if (quiz[quizCount].correct === clickedAnswer.textContent) {
-      score++;
-    }
-    quizCount++;
-    if (quizCount < quizLength) {
-      setQuestion();
-    } else {
-      answerResult.classList.add('active_result')
-      answerResultText.textContent = "終了！あなたの正解数は" + score + "/" + quizLength + "です！";
-    }
-  });
-  clickedCount++;
-}
   quizBox.appendChild(answersBox);
   quizWrapper.appendChild(quizBox);
 }
