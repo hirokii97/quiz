@@ -1,4 +1,19 @@
 "use strict";
+const { v4: uuidv4 } = require("uuid");
+
+const playerId = uuidv4();
+const questionId = "A";
+
+const params = {
+  team: questionId,
+  playerId: playerId
+}
+
+const urlParam = new URLSearchParams(params).toString();
+console.log(urlParam);
+
+const toResult = document.getElementById('toResult')
+toResult.href = '../result/index.html' + '?' + urlParam 
 
 const quiz = [
   {
@@ -41,7 +56,7 @@ const judge = (e, i, correctBox) => {
   } else {
     correctBox.textContent = "不正解";
   }
-  answerNumber++
+  answerNumber++;
 };
 
 //quizの数だけ表示する
@@ -85,7 +100,7 @@ for (let i = 0; i < quizLength; i++) {
         allAnswers[index].disabled = "true";
       }
       quizBox.appendChild(correctBox);
-      answerNumberCount(answerNumber)
+      answerNumberCount(answerNumber);
     });
   }
 
@@ -93,14 +108,12 @@ for (let i = 0; i < quizLength; i++) {
   quizWrapper.appendChild(quizBox);
 }
 
-const answerNumberCount = (answerNumber)=>{
+const answerNumberCount = (answerNumber) => {
   //全問回答したら表示する
-  if(answerNumber === quizLength){
-    localStorage.setItem('correctPoint',correctPoint)
-    localStorage.setItem('quizLength',quizLength)
+  if (answerNumber === quizLength) {
+    localStorage.setItem("correctPoint", correctPoint);
+    localStorage.setItem("quizLength", quizLength);
   }
-}
+};
 
 //結果を見る→正解数をlocalStorageで保存
-
-
