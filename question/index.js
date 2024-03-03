@@ -13,18 +13,35 @@ const quiz = [
     answers: ["a.川崎", "b.ロンドン", "c.大阪", "d.名古屋"],
     correct: "b.ロンドン",
   },
+  {
+    questionNumber: "質問３",
+    question: "オーストラリアの首都は？",
+    answers: ["a.川崎", "b.ロンドン", "c.キャンベラ", "d.名古屋"],
+    correct: "c.キャンベラ",
+  },
+  {
+    questionNumber: "質問4",
+    question: "イタリアの首都は？",
+    answers: ["a.ローマ", "b.ロンドン", "c.キャンベラ", "d.名古屋"],
+    correct: "a.ローマ",
+  },
 ];
 
+let correctPoint = 0;
+let answerNumber = 0;
+
 //正解・不正解の判定、表示
-const judge = (e, i,correctBox) => {
-  const correct = quiz[i].correct
+const judge = (e, i, correctBox) => {
+  const correct = quiz[i].correct;
   correctBox.className = `correctBox_${i}`;
 
   if (correct === e.target.textContent) {
     correctBox.textContent = "正解";
+    correctPoint++;
   } else {
     correctBox.textContent = "不正解";
   }
+  answerNumber++
 };
 
 //quizの数だけ表示する
@@ -35,7 +52,7 @@ const quizWrapper = document.getElementById("question-wrapper");
 //問題の表示
 for (let i = 0; i < quizLength; i++) {
   const quizBox = document.createElement("div");
-  quizBox.className = `quiz_${i}`
+  quizBox.className = `quiz_${i}`;
 
   //クイズ番号
   const question_number = document.createElement("h2");
@@ -53,7 +70,7 @@ for (let i = 0; i < quizLength; i++) {
   const answersBox = document.createElement("div");
 
   for (let a = 0; a < quiz[i].answers.length; a++) {
-    const answers = document.createElement('button');
+    const answers = document.createElement("button");
     answers.className = `answers_${i + 1}`;
     answers.textContent = quiz[i].answers[a];
     answersBox.appendChild(answers);
@@ -61,17 +78,29 @@ for (let i = 0; i < quizLength; i++) {
     const correctBox = document.createElement("div");
 
     answers.addEventListener("click", (e) => {
-      judge(e,i,correctBox);
-      const allAnswers = document.getElementsByClassName(answers.className)
+      judge(e, i, correctBox);
+      const allAnswers = document.getElementsByClassName(answers.className);
 
       for (let index = 0; index < allAnswers.length; index++) {
-        allAnswers[index].disabled ='true'
+        allAnswers[index].disabled = "true";
       }
-      quizBox.appendChild(correctBox)
-
+      quizBox.appendChild(correctBox);
+      answerNumberCount(answerNumber)
     });
   }
 
   quizBox.appendChild(answersBox);
   quizWrapper.appendChild(quizBox);
 }
+
+const answerNumberCount = (answerNumber)=>{
+  //全問回答したら表示する
+  if(answerNumber === quizLength){
+    localStorage.setItem('correctPoint',correctPoint)
+    localStorage.setItem('quizLength',quizLength)
+  }
+}
+
+//結果を見る→正解数をlocalStorageで保存
+
+
