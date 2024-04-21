@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "type": "module",
     "browserify": "^17.0.0",
     "uuid": "^9.0.1"
   }
+  
 }
