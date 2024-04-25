@@ -42,7 +42,7 @@ export const quizzes = [
     },
     {
       quizName: "地理",
-      questionNumber: "問題３",
+      questionNumber: "問題５",
       question: "アメリカ合衆国の首都は？",
       answers: ["ワシントンD.C.", "ニューヨーク", "ロサンゼルス", "シカゴ"],
       correct: "ワシントンD.C.",
@@ -65,7 +65,7 @@ export const quizzes = [
     },
     {
       quizName: "英語",
-      questionNumber: "質問４",
+      questionNumber: "問題２",
       question: "Who wrote 'Romeo and Juliet'?",
       answers: ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
       correct: "William Shakespeare",
@@ -75,7 +75,7 @@ export const quizzes = [
     },
     {
       quizName: "英語",
-      questionNumber: "質問５",
+      questionNumber: "問題３",
       question: "What is the opposite of 'brave'?",
       answers: ["fearful", "strong", "kind", "happy"],
       correct: "fearful",
@@ -85,7 +85,7 @@ export const quizzes = [
     },
     {
       quizName: "英語",
-      questionNumber: "質問６",
+      questionNumber: "問題４",
       question: "Which of the following is a synonym for 'beautiful'?",
       answers: ["gorgeous", "ugly", "ordinary", "boring"],
       correct: "gorgeous",
@@ -97,7 +97,7 @@ export const quizzes = [
   [
     {
       quizName: "歴史",
-      questionNumber: "質問３",
+      questionNumber: "問題１",
       question: "フランス革命時にギロチンにかけられたフランスの政治家は誰ですか？",
       answers: ["ルイ16世", "マリー・アントワネット", "ロベスピエール", "ナポレオン・ボナパルト"],
       correct: "ロベスピエール",
@@ -107,7 +107,7 @@ export const quizzes = [
     },
     {
       quizName: "歴史",
-      questionNumber: "質問４",
+      questionNumber: "問題２",
       question: "アメリカ独立宣言を起草した人物は誰ですか？",
       answers: ["トマス・ジェファーソン", "ジョージ・ワシントン", "ジョン・アダムズ", "ベンジャミン・フランクリン"],
       correct: "トマス・ジェファーソン",
@@ -119,7 +119,7 @@ export const quizzes = [
   [
     {
       quizName: "理科",
-      questionNumber: "質問１",
+      questionNumber: "問題１",
       question: "水の化学式は？",
       answers: ["HO", "H2O", "CO2", "NaCl"],
       correct: "H2O",
@@ -129,7 +129,7 @@ export const quizzes = [
     },
     {
       quizName: "理科",
-      questionNumber: "質問２",
+      questionNumber: "問題２",
       question: "酸素の化学記号は？",
       answers: ["O", "Ox", "O2", "Oh"],
       correct: "O",
