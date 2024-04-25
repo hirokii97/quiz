@@ -15,14 +15,16 @@ for (let index = 0; index < quizzes.length; index++) {
       const correct = quiz[i].correct;
       quiz[i].yourAnswer = e.target.textContent;
 
-      correctBox.className = `correctBox_${i}`;
+      correctBox.className = `correctBox`;
 
       if (correct === e.target.textContent) {
-        correctBox.textContent = "正解";
+        correctBox.textContent = "正解!!";
+        correctBox.classList.add('judge_correct')
         quiz[i].judge = "正解";
         correctPoint++;
       } else {
-        correctBox.textContent = "不正解";
+        correctBox.textContent = "不正解..ドンマイ！";
+        correctBox.classList.add('judge_false')
         quiz[i].judge = "不正解";
       }
       answerNumber++;
@@ -36,26 +38,27 @@ for (let index = 0; index < quizzes.length; index++) {
     //問題の表示
     for (let i = 0; i < quizLength; i++) {
       const quizBox = document.createElement("div");
-      quizBox.className = `quiz_${i}`;
+      quizBox.className = `quiz`;
 
       //クイズ番号
       const question_number = document.createElement("h2");
-      question_number.className = `question_number_${i + 1}`;
+      question_number.className = `question_number`;
       question_number.textContent = quiz[i].questionNumber;
       quizBox.appendChild(question_number);
 
       //クイズ内容
       const question = document.createElement("p");
-      question.className = `question_${i + 1}`;
+      question.className = `question`;
       question.textContent = quiz[i].question;
       quizBox.appendChild(question);
 
       //選択肢
       const answersBox = document.createElement("div");
+      answersBox.className = "answerBox";
 
       for (let a = 0; a < quiz[i].answers.length; a++) {
         const answers = document.createElement("button");
-        answers.className = `answers_${i + 1}`;
+        answers.className = `answer_${i} answer`;
         answers.textContent = quiz[i].answers[a];
         answersBox.appendChild(answers);
 
@@ -63,9 +66,11 @@ for (let index = 0; index < quizzes.length; index++) {
 
         answers.addEventListener("click", (e) => {
           judge(e, i, correctBox);
+
           const allAnswers = document.getElementsByClassName(answers.className);
 
           for (let index = 0; index < allAnswers.length; index++) {
+            answers.classList.add('selected')
             allAnswers[index].disabled = "true";
           }
           quizBox.appendChild(correctBox);

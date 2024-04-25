@@ -3,7 +3,7 @@
 import { quizzes } from "../quizzes.js";
 
 const result = document.getElementsByClassName("your-result")[0];
-const question = document.getElementsByClassName("question-link")[0];
+const question = document.getElementsByClassName("question-link-section")[0];
 
 for (let index = 0; index < quizzes.length; index++) {
 
@@ -17,13 +17,16 @@ for (let index = 0; index < quizzes.length; index++) {
   let quizData = JSON.parse(localStorage.getItem(`${quizzes[index][0].quizName}`));
 
   // 学習記録
+  const question_box = document.createElement("div");
+  question_box.className = "question_box"
+
   const question_name = document.createElement("p");
-  question_name.className = `question_number_${index}`;
+  question_name.className = `question_number`;
   question_name.textContent = quizData[0].quizName;
 
   // テスト結果
   const question_result = document.createElement("p");
-  question_result.className = `question_result_${index}`;
+  question_result.className = `question_result`;
   const quizCount = quizData.length;
 
   let collectCount = 0;
@@ -38,10 +41,11 @@ for (let index = 0; index < quizzes.length; index++) {
   // 問題を解く
   const questionLink = document.createElement("a");
   questionLink.href = `../question/index.html?${quizData[0].quizTitle}`;
-  questionLink.className = `question_link_${index}`;
+  questionLink.className = `question_link`;
   questionLink.textContent = quizData[0].quizName;
 
-  result.appendChild(question_name);
-  result.appendChild(question_result);
+  question_box.appendChild(question_name);
+  question_box.appendChild(question_result);
+  result.appendChild(question_box)
   question.appendChild(questionLink);
 }

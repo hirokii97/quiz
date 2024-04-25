@@ -1,8 +1,0 @@
-.quiz_box .answer_result {
-  display: none;
-  transition: all 0.5s;
-}
-
-.quiz_box .active_result {
-  display: block;
-}
