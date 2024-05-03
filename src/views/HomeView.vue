@@ -1,6 +1,6 @@
 <script setup>
 // import { quizzes } from '../quizzes.js'
-import { quizzes } from '../quizzes_demo.js'
+import { quizzes } from '../quizzes.js'
 
 const allQuizData = quizzes.map((question) => {
   if (

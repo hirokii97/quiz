@@ -1,12 +1,35 @@
-task1 : 正解を押下したら答えが出てくる  
-task2 :　結果発表画面を作成  
-task3 : uuidの発行、パラメーター付与  
+# vue-project
 
-### Node.jsのモジュールやnpmのモジュールを、ブラウザでも使用できるようにする  
-uuid生成ライブラリを使用するために必要  
-require importなどを使うため  
-index.js → bundle.jsに変換する  
+This template should help get you started developing with Vue 3 in Vite.
 
+## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
 ```
-browserify index.js -o bundle.js
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
 ```

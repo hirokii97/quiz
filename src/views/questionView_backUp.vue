@@ -1,5 +1,5 @@
 <script setup>
-import { quizzes } from '../quizzes_demo'
+import { quizzes } from '../quizzes'
 import { ref } from 'vue'
 
 // URLから問題名取得

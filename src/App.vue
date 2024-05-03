@@ -1,19 +1,16 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import DemeComponents from './components/DemeComponents.vue'
+import HomeView from './views/HomeView.vue';
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <DemeComponents />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
       </nav>
     </div>
   </header>
-
   <RouterView />
 </template>
 

@@ -1,5 +1,5 @@
 <script setup>
-import { quizzes } from '../quizzes_demo'
+import { quizzes } from '../quizzes'
 import QuizWrap from '../components/QuizWrap.vue'
 // import { ref } from 'vue'
 

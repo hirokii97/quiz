@@ -80,6 +80,73 @@ export const quizzes = [
           correct: 'William Shakespeare',
           yourAnswer: null,
           judge: null
+        },
+        {
+          questionNumber: '問題3',
+          id:'03',
+          question: "What is the opposite of 'brave'?",
+          answers: ["fearful", "strong", "kind", "happy"],
+          correct: "fearful",
+          yourAnswer: null,
+          judge: null
+        }
+      ]
+    }
+  ],
+  [
+    {
+      quizName: "歴史",
+      quizTitle: 'title=history01',
+      finalJudge: false,
+      status: '未回答',
+      correctCount: 0,
+      question: [
+        {
+          questionNumber: '問題１',
+          id:'01',
+          question: "フランス革命時にギロチンにかけられたフランスの政治家は誰ですか？",
+          answers: ["ルイ16世", "マリー・アントワネット", "ロベスピエール", "ナポレオン・ボナパルト"],
+          correct: "ロベスピエール",
+          yourAnswer: null,
+          judge: null
+        },
+        {
+          questionNumber: '問題２',
+          id:'02',
+          question: "アメリカ独立宣言を起草した人物は誰ですか？",
+          answers: ["トマス・ジェファーソン", "ジョージ・ワシントン", "ジョン・アダムズ", "ベンジャミン・フランクリン"],
+          correct: "トマス・ジェファーソン",
+          yourAnswer: null,
+          judge: null
+        }
+      ]
+    }
+  ],
+  [
+    {
+      quizName: "理科",
+      quizTitle: 'title=chemistry01',
+      finalJudge: false,
+      status: '未回答',
+      correctCount: 0,
+      question: [
+        {
+          questionNumber: '問題１',
+          id:'01',
+          question: "水の化学式は？",
+          answers: ["HO", "H2O", "CO2", "NaCl"],
+          correct: "H2O",
+          yourAnswer: null,
+          judge: null
+        },
+        {
+          questionNumber: '問題２',
+          id:'02',
+          question: "酸素の化学記号は？",
+          answers: ["O", "Ox", "O2", "Oh"],
+          correct: "O",
+          yourAnswer: null,
+          judge: null
         }
       ]
     }
