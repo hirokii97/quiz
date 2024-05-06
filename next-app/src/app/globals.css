@@ -108,3 +108,10 @@ body {
   width: 100%;
   height: 50px;
 }
+
+/* 選択したボタンは青色にする */
+.quiz .selected {
+  border: none;
+  background-color: #4882f7;
+  color: #fff;
+}

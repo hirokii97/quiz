@@ -6,18 +6,14 @@ import styles from "./page.module.css";
 export default function Home() {
   const allQuizData = quizzes.map((question) => {
     const cookieId = question[0].quizTitle;
-    const cookieData = Cookies.get(cookieId);
+    const cookieData: string | undefined = Cookies.get(cookieId);
 
-    if (cookieData === undefined) {
+    if (cookieData === "undefined") {
       // cookieに初期値を設定する
       const quizDataJson = JSON.stringify(question);
-      console.log(quizDataJson);
-      console.log(question);
-
-      Cookies.set(cookieId, quizDataJson, { expires: 7 });
+      Cookies.set(cookieId, quizDataJson);
     }
-
-    return JSON.parse(Cookies.get(cookieId));
+    return JSON.parse(cookieData!);
   });
 
   return (

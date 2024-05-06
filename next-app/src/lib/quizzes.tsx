@@ -1,4 +1,6 @@
-export const quizzes = [
+import { QuizData } from "@/app/type";
+
+export const quizzes: QuizData[] = [
   [
     {
       quizName: "地理",
