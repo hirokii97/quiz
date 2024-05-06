@@ -10,10 +10,3 @@
   margin-top: 16px;
   margin-bottom: 16px;
 }
-
-.correctBox.judge_correct {
-  color: red;
-}
-.correctBox.judge_false {
-  color: gray;
-}

@@ -110,8 +110,15 @@ body {
 }
 
 /* 選択したボタンは青色にする */
-.quiz .selected {
+.quiz_box .selected {
   border: none;
   background-color: #4882f7;
   color: #fff;
+}
+
+.judge_correct {
+  color: red;
+}
+.judge_false {
+  color: gray;
 }

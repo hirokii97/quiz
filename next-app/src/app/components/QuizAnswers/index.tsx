@@ -35,7 +35,7 @@ export default function Home(props: QuizAnswersProps) {
           </div>
         </div>
       ))}
-      <div className={`${styles.correctBox} ${styles.judgeClass}`}>{judgeText}</div>
+      <div className={`${styles.correctBox} ${judgeClass}`}>{judgeText}</div>
     </>
   );
 }

@@ -3,6 +3,7 @@
 import { quizzes } from "@/lib/quizzes";
 import { QuizData } from "../type";
 import QuizWrap from "@/app/components/QuizWrap";
+import Cookies from "js-cookie";
 import { useSearchParams } from "next/navigation";
 
 export default function Home() {
@@ -37,7 +38,7 @@ export default function Home() {
     quizData[0].correctCount = correctCount;
 
     const quizDataJson = JSON.stringify(quizData);
-    localStorage.setItem(quizData[0].quizTitle, quizDataJson);
+    Cookies.set(quizData[0].quizTitle, quizDataJson);
   };
   return (
     <section className="quiz_box">
