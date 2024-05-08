@@ -1,0 +1,14 @@
+.question_number {
+  margin-top: 8px;
+}
+
+.question {
+  font-size: 18px;
+  margin-top: 18px;
+}
+
+.quiz {
+  background: #fff;
+  padding: 32px 7%;
+  margin-top: 32px;
+}

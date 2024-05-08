@@ -1,0 +1,22 @@
+
+.answer_result_wrap {
+  margin: 32px 0px 24px;
+  text-align: center;
+  font-size: 32px;
+}
+.answer_result {
+  margin: 24px;
+  text-align: center;
+  font-size: 32px;
+}
+
+.answer_result_text {
+  text-align: center;
+  padding-top: 24px;
+  font-size: 20px;
+}
+
+.answer_result_title {
+  margin-top: 64px;
+  font-size: 16px;
+}

@@ -1,0 +1,7 @@
+.answer {
+  width: 45%;
+  border: #000 1px solid;
+  padding: 16px 8px;
+  border-radius: 5px;
+  background-color: #fff;
+}

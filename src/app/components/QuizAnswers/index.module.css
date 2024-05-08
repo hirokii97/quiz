@@ -1,0 +1,12 @@
+.answerBox {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 16px;
+  cursor: pointer;
+}
+.correctBox {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
