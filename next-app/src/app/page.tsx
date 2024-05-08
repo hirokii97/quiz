@@ -43,7 +43,7 @@ export default function Home() {
           ))}
         </div>
         <div>
-          <h2>問題をとく</h2>
+          <h2 className={styles.toQuestion}>問題をとく</h2>
           {allQuizData.map((data, i) => (
             <a key={i} href={`/question/?${data[0].quizTitle}`} className={styles.question_link}>
               {data[0].quizName}
