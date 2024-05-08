@@ -2,19 +2,28 @@
 import Cookies from "js-cookie";
 import { quizzes } from "../lib/quizzes";
 import styles from "./page.module.css";
+import { useEffect, useState } from "react";
+import { QuizData } from "./type";
 
 export default function Home() {
-  const allQuizData = quizzes.map((question) => {
-    const cookieId = question[0].quizTitle;
-    const cookieData: string | undefined = Cookies.get(cookieId);
+  const [allQuizData, setAllQuizData] = useState<QuizData[]>([]);
 
-    if (cookieData === "undefined") {
-      // cookieに初期値を設定する
-      const quizDataJson = JSON.stringify(question);
-      Cookies.set(cookieId, quizDataJson);
-    }
-    return JSON.parse(cookieData!);
-  });
+  useEffect(() => {
+    const data = quizzes.map((question) => {
+      const cookieId = question[0].quizTitle;
+      const cookieData = Cookies.get(cookieId);
+
+      if (cookieData === undefined) {
+        // cookieに初期値を設定する
+        const quizDataJson = JSON.stringify(question);
+        Cookies.set(cookieId, quizDataJson);
+        return question;
+      } else {
+        return JSON.parse(cookieData);
+      }
+    });
+    setAllQuizData(data)
+  }, []);
 
   return (
     <section className={styles.quiz_box}>
