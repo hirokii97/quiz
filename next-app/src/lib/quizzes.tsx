@@ -12,7 +12,7 @@ export const quizzes: QuizData[] = [
         {
           questionNumber: "問題１",
           id: "01",
-          question: "東京の首都は？",
+          question: "日本の首都は？",
           answers: ["a.川崎", "b.東京", "c.大阪", "d.名古屋"],
           correct: "b.東京",
           yourAnswer: null,

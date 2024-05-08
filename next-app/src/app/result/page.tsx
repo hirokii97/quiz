@@ -7,7 +7,6 @@ export default function Home() {
   const quizTitle = useSearchParams().get("title");
 
   const cookieData: string | undefined = Cookies.get(`title=${quizTitle}`);
-  console.log(cookieData);
   const quiz = JSON.parse(cookieData!);
 
   const quizCount = quiz[0].question.length;
